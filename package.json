@@ -1,0 +1,20 @@
+{
+  "name": "CandyStore",
+  "version": "1.0.0",
+  "description": "Online candy store",
+  "main": "index.js",
+  "repository": "https://github.com/IagoNascimentocode/CandyStore.git",
+  "author": "Iago Nascimento",
+  "license": "MIT",
+  "scripts": {
+    "dev": "ts-node-dev server.ts"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.13",
+    "ts-node-dev": "^1.1.8",
+    "typescript": "^4.4.3"
+  }
+}

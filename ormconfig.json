@@ -1,0 +1,17 @@
+{
+   "type": "postgres",
+   "host": "localhost",
+   "port": 5432,
+   "username": "admin",
+   "password": "candy",
+   "database": "candy_storage",
+   "entities": [
+      "src/models/**/*.ts"
+   ],
+   "migrations": [
+      "src/database/migration/**/*.ts"
+   ],
+   "cli": {
+      "migrationsDir": "src/database/migrations"
+   }
+}

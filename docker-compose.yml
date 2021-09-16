@@ -1,0 +1,28 @@
+version: "3.3"
+
+services:
+  database_candy:
+    image: postgres
+    container_name: database_candy
+    restart: always
+    ports: 
+      - 5432:5432
+    environment: 
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=candy
+      - POSTGRES_DB=candy_storage
+    volumes:
+      - pgdata:/data/postgres
+    network_mode: host  
+  app:
+    build: .
+    container_name: candy
+    ports:
+      - 1024:1024
+    volumes:
+      - .:/app
+    network_mode: host
+
+volumes:
+  pgdata:
+    driver: local  

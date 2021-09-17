@@ -1,9 +1,10 @@
 import { Request, Response, Router } from "express";
+import { Repository } from "typeorm";
+import { UsersRepository } from "../modules/accounts/repositories/UsersRepository";
 
 const usersRoutes = Router();
 
-usersRoutes.get('/hello',async (request:Request,response:Response): Promise<Response> => {
-    return response.status(200).send("Hello Wrold")
-})
 
+usersRoutes.post('/')
+usersRoutes.get('/')
 export {usersRoutes}

@@ -37,9 +37,9 @@ class User {
     constructor() {
      if (!this.id) {
       this.id = uuid();
-   
-     }
+        }
     }
-   }
-   
-   export { User }
+    
+}
+  
+export { User }

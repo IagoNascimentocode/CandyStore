@@ -1,10 +1,13 @@
-import { Request, Response, Router } from "express";
-import { Repository } from "typeorm";
-import { UsersRepository } from "../modules/accounts/repositories/UsersRepository";
+import { Router } from "express";
+import { CreateUserController } from "../modules/accounts/useCases/createUser/CreateUserController";
+import { ListAllUsersController } from "../modules/accounts/useCases/listAllUsers/ListAllUsersController";
 
 const usersRoutes = Router();
 
+const createUserController = new CreateUserController();
+const listAllUsersController = new ListAllUsersController();
 
-usersRoutes.post('/')
-usersRoutes.get('/')
+usersRoutes.post('/',createUserController.handle);
+usersRoutes.get('/',listAllUsersController.handle);
+
 export {usersRoutes}

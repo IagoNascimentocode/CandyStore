@@ -33,5 +33,9 @@ class UsersRepository implements IUsersRepository{
         return user
     }
     
+    async deleteUser({id}:IFindIdDTO):Promise<void>{
+
+        await this.repository.delete(id)
+    }
 }
 export {UsersRepository}

@@ -9,8 +9,7 @@ const usersRoutes = Router();
 const createUserController = new CreateUserController();
 const listAllUsersController = new ListAllUsersController();
 const findUserByIDController = new FindUserByIdController();
-const deleteUserController = new DeleteUserController();
-
+const deleteUserController = new DeleteUserController();;
 
 usersRoutes.post('/',createUserController.handle);
 usersRoutes.get('/',listAllUsersController.handle);

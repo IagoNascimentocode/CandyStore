@@ -1,6 +1,5 @@
 import { inject, injectable } from "tsyringe";
 import { DeleteUserDTO } from "../../dtos/DeleteUserDTO";
-
 import { IUsersRepository } from "../../repositories/IUsersRepository";
 
 @injectable()

@@ -6,7 +6,10 @@
    "password": "candy",
    "database": "candy_storage",
    "entities": [
-      "src/modules/accounts/entities/*.ts"
+      "src/modules/accounts/entities/*.ts",
+      "src/modules/store/entities/*.ts",
+      "src/modules/shelf/entities/*.ts",
+      "src/modules/product/entities/*.ts"
    ],
    "migrations": [
       "src/database/migrations/**/*.ts"

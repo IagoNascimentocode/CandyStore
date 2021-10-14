@@ -11,9 +11,9 @@ class CreateShelfUseCase{
         private shelvesRepository:IShelvesRepository
     ){}
 
-        async execute({name,product_id}:ICreateShelfDTO):Promise<Shelf>{
+        async execute({name}:ICreateShelfDTO):Promise<Shelf>{
 
-            const shelf = await this.shelvesRepository.create({name,product_id})
+            const shelf = await this.shelvesRepository.create({name})
 
             return shelf
         }

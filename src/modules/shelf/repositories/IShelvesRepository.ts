@@ -1,9 +1,11 @@
 import { ICreateShelfDTO } from "../dtos/ICreateShelfDTO";
+import { IListShelfAndProductsDTO } from "../dtos/IListShelfProductsDTO";
 import { Shelf } from "../entities/Shelf";
 
 interface IShelvesRepository {
 
-    create({name,product_id}:ICreateShelfDTO):Promise<Shelf>
+    create({name}:ICreateShelfDTO):Promise<Shelf>;
+    listShelfAndProducts({shelf_id}:IListShelfAndProductsDTO):Promise<Shelf[]>;
 
 }
 

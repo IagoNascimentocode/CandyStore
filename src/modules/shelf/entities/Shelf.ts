@@ -11,7 +11,7 @@ class Shelf {
     @Column()
     name:string;
 
-    @OneToMany(()=> Product ,product => product.id)
+    @OneToMany(()=> Product ,product => product.shelf)
     @JoinColumn({name:"product_id"})
     product:Product[];
 

@@ -1,11 +1,11 @@
 import {MigrationInterface, QueryRunner, Table} from "typeorm";
 
-export class CreateShelf1633624114131 implements MigrationInterface {
+export class CreateStore1634691152966 implements MigrationInterface {
 
     public async up(queryRunner: QueryRunner): Promise<void> {
         await queryRunner.createTable(
             new Table({
-                name:"shelf",
+                name:"store",
                 columns:[
                     {
                         name:"id",
@@ -14,10 +14,14 @@ export class CreateShelf1633624114131 implements MigrationInterface {
                     },
                     {
                         name:"name",
-                        type:'varchar'
+                        type:"varchar"
                     },
                     {
-                        name:"product_id",
+                        name:"category",
+                        type:"varchar"
+                    },
+                    {
+                        name:"shelf_id",
                         type:"uuid",
                         isNullable:true
                     },
@@ -34,12 +38,12 @@ export class CreateShelf1633624114131 implements MigrationInterface {
                 ],
                 foreignKeys:[
                     {
-                        name:"FKProduct",
-                        referencedTableName:"product",
+                        name:"FKShelf",
+                        referencedTableName:"shelf",
                         referencedColumnNames:["id"],
-                        columnNames:["product_id"],
+                        columnNames:["shelf_id"],
                         onDelete: "SET NULL",
-                        onUpdate: "SET NULL"   
+                        onUpdate: "SET NULL"
                     }
                 ]
             })
@@ -47,7 +51,7 @@ export class CreateShelf1633624114131 implements MigrationInterface {
     }
 
     public async down(queryRunner: QueryRunner): Promise<void> {
-        await queryRunner.dropTable("shelf")
+        await queryRunner.dropTable("store")
     }
 
 }

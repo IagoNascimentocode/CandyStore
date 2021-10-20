@@ -1,5 +1,6 @@
-import { Column, CreateDateColumn, Entity, PrimaryColumn, UpdateDateColumn } from "typeorm";
+import { Column, CreateDateColumn, Entity, JoinColumn, ManyToOne, OneToOne, PrimaryColumn, UpdateDateColumn } from "typeorm";
 import {v4 as uuid} from "uuid";
+import { Shelf } from "../../shelf/entities/Shelf";
 
 @Entity("product")
 class Product {
@@ -15,6 +16,13 @@ class Product {
 
     @Column()
     quantity:number;
+
+    @ManyToOne(()=> Shelf)
+    @JoinColumn({name:"shelf_id"})
+    shelf:Shelf
+
+    @Column()
+    shelf_id:string;
 
     @Column()
     price:number;

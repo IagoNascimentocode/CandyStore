@@ -6,7 +6,6 @@ import { router } from "./router";
 import "./modules/container";
 import "./database";
 
-
 const app = express();
 
 app.use(express.json());

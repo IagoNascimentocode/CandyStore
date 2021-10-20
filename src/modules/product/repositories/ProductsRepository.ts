@@ -21,6 +21,12 @@ class ProductsRepository implements IProductsRepository{
         
         return product
     }
+
+    async ListAllProducts():Promise<Product[]>{
+        const products =  await this.repository.find()
+        
+        return products
+    }
     
     async FindProductByID({ id }: IFindProductByIDDTO): Promise<Product> {
         const product = await this.repository.findOne(id)
@@ -37,6 +43,11 @@ class ProductsRepository implements IProductsRepository{
         .setParameters({product_id})
         .execute()
 
+    }
+
+    async deleteProduct({id}:IFindProductByIDDTO):Promise<void>{
+
+        await this.repository.delete(id)
     }
 }
 export {ProductsRepository}

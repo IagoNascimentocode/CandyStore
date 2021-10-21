@@ -14,7 +14,7 @@ class Store {
     @Column()
     category:string;
 
-    @OneToMany(() => Shelf, shelf => shelf.id) 
+    @OneToMany(() => Shelf, shelf => shelf.store) 
     @JoinColumn({name:"shelf_id"})
     shelf:Shelf[];
 

@@ -21,6 +21,11 @@ export class CreateShelf1634678415001 implements MigrationInterface {
                         type:"uuid",
                         isNullable:true
                     },
+                    {                   
+                        name:"store_id",
+                        type:"uuid",
+                        isNullable:true
+                    },
                     {
                         name: "created_at",
                         type: "timestamp",
@@ -40,7 +45,7 @@ export class CreateShelf1634678415001 implements MigrationInterface {
                         columnNames:["product_id"],
                         onDelete: "SET NULL",
                         onUpdate: "SET NULL"   
-                    }
+                    },
                 ]
             })
         )

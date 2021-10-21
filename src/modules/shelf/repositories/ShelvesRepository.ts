@@ -1,8 +1,9 @@
-import { Entity, getRepository, Repository } from "typeorm";
+import { createQueryBuilder, Entity, getRepository, Repository } from "typeorm";
 import { ICreateShelfDTO } from "../dtos/ICreateShelfDTO";
 import { IFindShelfByIDDTO } from "../dtos/IFIndShelfByIDDTO";
 import { IListShelfAndProductsDTO } from "../dtos/IListShelfAndProductsDTO";
 import { IPutProductOnShelfDTO } from "../dtos/IPutProductOnShelfDTO";
+import { IPutStoreOnShelfDTO } from "../dtos/IPutStoreOnShelfDTO";
 import { Shelf } from "../entities/Shelf";
 import { IShelvesRepository } from "./IShelvesRepository";
 
@@ -15,7 +16,7 @@ class ShelvesRepository implements IShelvesRepository{
         this.repository = getRepository(Shelf)
     }
 
-    
+ 
     async create({ name }: ICreateShelfDTO): Promise<Shelf> {
 
         const shelf = this.repository.create({name})
@@ -50,6 +51,15 @@ class ShelvesRepository implements IShelvesRepository{
         const shelf = await this.repository.findOne(shelf_id)
 
         return shelf
+    }
+
+    async putStoreOnShelf({ store_id, shelf_id }: IPutStoreOnShelfDTO): Promise<void> {
+        await this.repository.createQueryBuilder()
+        .update()
+        .set({store_id})
+        .where("id = :shelf_id")
+        .setParameters({shelf_id})
+        .execute()
     }
 }
 

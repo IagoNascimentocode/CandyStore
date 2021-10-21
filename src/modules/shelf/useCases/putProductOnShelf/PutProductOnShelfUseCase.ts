@@ -18,10 +18,18 @@ class PutProductOnShelfUseCase{
 
             const product = await this.productsRepository.FindProductByID({id:product_id})
 
+            if(!product){
+                throw Error("product does not exist")
+            }
+
             const shelf = await this.shelvesRepository.FindShelfByID({shelf_id})
 
-            await this.shelvesRepository.putProductOnShelf({shelf_id:shelf.id,product_id:product.id})
-            
+            if(!shelf){
+                throw Error("shelf does not exist")
+            }
+
+            await this.shelvesRepository.putProductOnShelf({shelf_id,product_id})
+           
             await this.productsRepository.putShelfOnProduct({product_id,shelf_id})
         }
 }

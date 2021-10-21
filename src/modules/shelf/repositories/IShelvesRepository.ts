@@ -8,6 +8,7 @@ import { Shelf } from "../entities/Shelf";
 interface IShelvesRepository {
 
     create({name}:ICreateShelfDTO):Promise<Shelf>;
+    listAllShelves():Promise<Shelf[]>;
     listShelfAndProducts({shelf_id}:IListShelfAndProductsDTO):Promise<Shelf[]>;
     putProductOnShelf({shelf_id,product_id}:IPutProductOnShelfDTO):Promise<void>;
     FindShelfByID({shelf_id}:IFindShelfByIDDTO): Promise<Shelf>;

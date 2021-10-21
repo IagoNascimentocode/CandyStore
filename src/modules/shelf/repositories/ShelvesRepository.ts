@@ -26,6 +26,13 @@ class ShelvesRepository implements IShelvesRepository{
         return shelf
     }
 
+    async listAllShelves():Promise<Shelf[]>{
+
+        const shelves = this.repository.find()
+
+        return shelves
+    }
+
     async listShelfAndProducts({ shelf_id }: IListShelfAndProductsDTO): Promise<Shelf[]> {
         
         const shelfAndProducts = await this.repository.find({

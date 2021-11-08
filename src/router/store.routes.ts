@@ -12,10 +12,9 @@ const listStoreAndShelvesController = new ListStoreAndShelvesController();
 const putShelfOnStoreController = new PutshelfOnStoreController();
 const listAllStoreController = new ListAllStoreController();
 
-
-storeRouter.post('/createStore',createStoreController.handle);
+storeRouter.post('/createStore',createStoreController.handle)
 storeRouter.get('/listAll',listAllStoreController.handle)
-storeRouter.get('/listStore',listStoreAndShelvesController.handle);
-storeRouter.post('/insertShelf',putShelfOnStoreController.handle);
+storeRouter.get('/listStore',listStoreAndShelvesController.handle)
+storeRouter.post('/insertShelf',putShelfOnStoreController.handle)
 
 export {storeRouter}

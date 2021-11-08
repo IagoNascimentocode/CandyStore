@@ -3,10 +3,10 @@ interface ICreateUserDTO {
     name: string;
     email: string;
     password: string;
-    admin?: boolean
+    admin?: boolean;
     city: string;
     address: string;
     birthDate: Date;
-   }
+}
    
    export { ICreateUserDTO }

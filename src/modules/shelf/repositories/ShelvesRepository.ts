@@ -15,8 +15,7 @@ class ShelvesRepository implements IShelvesRepository{
     constructor(){
         this.repository = getRepository(Shelf)
     }
-
- 
+    
     async create({ name }: ICreateShelfDTO): Promise<Shelf> {
 
         const shelf = this.repository.create({name})
@@ -54,7 +53,7 @@ class ShelvesRepository implements IShelvesRepository{
 
     }
 
-    async FindShelfByID({ shelf_id}:IFindShelfByIDDTO): Promise<Shelf> {
+    async findShelfByID({ shelf_id}:IFindShelfByIDDTO): Promise<Shelf> {
         const shelf = await this.repository.findOne(shelf_id)
 
         return shelf

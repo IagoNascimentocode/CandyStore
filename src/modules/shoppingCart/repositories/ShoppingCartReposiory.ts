@@ -11,8 +11,6 @@ class ShoppingCartRepository implements IShoppingCartRepository{
         this.repository = getRepository(ShoppingCart)
     }
 
-
-
     async create({ user_id }: ICreateShoppingCartDTO): Promise<ShoppingCart> {
 
         const shoppingCart = this.repository.create({user_id})
@@ -30,6 +28,7 @@ class ShoppingCartRepository implements IShoppingCartRepository{
         
         return all
     }
+    
 }
 
 export {ShoppingCartRepository}

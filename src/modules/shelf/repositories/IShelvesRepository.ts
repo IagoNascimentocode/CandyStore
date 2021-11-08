@@ -11,7 +11,7 @@ interface IShelvesRepository {
     listAllShelves():Promise<Shelf[]>;
     listShelfAndProducts({shelf_id}:IListShelfAndProductsDTO):Promise<Shelf[]>;
     putProductOnShelf({shelf_id,product_id}:IPutProductOnShelfDTO):Promise<void>;
-    FindShelfByID({shelf_id}:IFindShelfByIDDTO): Promise<Shelf>;
+    findShelfByID({shelf_id}:IFindShelfByIDDTO): Promise<Shelf>;
     putStoreOnShelf({store_id,shelf_id}:IPutStoreOnShelfDTO): Promise<void>;
 }
 

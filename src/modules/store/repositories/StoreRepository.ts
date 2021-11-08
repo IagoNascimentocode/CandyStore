@@ -13,7 +13,6 @@ class StoreRepository implements IStoreRepository {
         this.repository = getRepository(Store)
     }
 
-
     async create({ name, category }: ICreateStoreDTO): Promise<Store> {
         const store = this.repository.create({name,category})
         
@@ -47,6 +46,7 @@ class StoreRepository implements IStoreRepository {
         .setParameters({store_id})
         .execute()
     }
-
+    
 }
+
 export {StoreRepository}

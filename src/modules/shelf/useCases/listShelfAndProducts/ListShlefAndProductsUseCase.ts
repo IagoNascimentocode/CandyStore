@@ -15,7 +15,6 @@ class ListShelfAndProductsUseCase{
 
         const shelf = await this.shelvesRepository.listShelfAndProducts({shelf_id})
 
-
         return shelf
     }
 

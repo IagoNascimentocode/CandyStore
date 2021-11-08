@@ -15,8 +15,7 @@ class CreateProductUseCase {
         const product = await this.productsRepository.create({name,easyID,quantity,price,available})
 
     }
-
-
+    
 }
 
 export {CreateProductUseCase}

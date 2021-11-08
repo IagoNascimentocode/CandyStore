@@ -1,5 +1,5 @@
 interface IFindShelfByIDDTO{
-    shelf_id:string
+    shelf_id:string;
 }
 
 export {IFindShelfByIDDTO}

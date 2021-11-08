@@ -44,10 +44,12 @@ class ProductsRepository implements IProductsRepository{
         .execute()
 
     }
-
+    
     async deleteProduct({id}:IFindProductByIDDTO):Promise<void>{
 
         await this.repository.delete(id)
     }
+
 }
+
 export {ProductsRepository}

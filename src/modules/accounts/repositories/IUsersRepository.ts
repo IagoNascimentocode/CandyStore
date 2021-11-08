@@ -13,4 +13,5 @@ interface IUsersRepository{
     deleteUser({id}:DeleteUserDTO):Promise<void>;
     insertShoppingCartInUser({user_id,shoppingCart_id}:IInsertShoppingCartInUserDTO):Promise<void>;
 }
+
 export {IUsersRepository}

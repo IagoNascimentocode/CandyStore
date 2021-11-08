@@ -16,6 +16,7 @@ class ListAllShelvesUseCase{
 
         return shelves
     }
+    
+}
 
-    }
 export {ListAllShelvesUseCase}

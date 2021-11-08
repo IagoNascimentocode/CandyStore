@@ -14,9 +14,10 @@ class ListStoreAndShelvesUseCase{
     async execute({store_id}:IFindStoreByID):Promise<Store[]>{
 
         const store = await this.storeRepository.listStoreAndShelves({store_id})
-
+        
         return store
     }
+    
 }
 
 export {ListStoreAndShelvesUseCase}

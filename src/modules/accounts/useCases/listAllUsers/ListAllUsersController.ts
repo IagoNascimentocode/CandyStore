@@ -10,9 +10,9 @@ class ListAllUsersController {
 
         const all = await listAllUsersUseCase.execute()
 
-
         return response.status(200).json(all)
     }
 
 }
+
 export {ListAllUsersController}

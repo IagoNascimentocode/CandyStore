@@ -11,12 +11,13 @@ class FindUserByIDUserCase{
         private usersRepository:IUsersRepository
     ){}
 
-        async execute({id}:IFindIdDTO):Promise<User>{   
+    async execute({id}:IFindIdDTO):Promise<User>{   
            
-            const user = await this.usersRepository.findUserByID({id})
+        const user = await this.usersRepository.findUserByID({id})
 
-           return user
-        }
-
+        return user
+    }
+    
 }
+
 export {FindUserByIDUserCase}

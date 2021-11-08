@@ -13,7 +13,6 @@ class UsersRepository implements IUsersRepository{
     constructor(){
         this.repository = getRepository(User)
     }
-
     
     async create({ name, email, password, birthDate, city, address}:ICreateUserDTO): Promise<User> {
         
@@ -60,6 +59,7 @@ class UsersRepository implements IUsersRepository{
 
         await this.repository.delete(id)
     }
+    
 }
 
 export {UsersRepository}

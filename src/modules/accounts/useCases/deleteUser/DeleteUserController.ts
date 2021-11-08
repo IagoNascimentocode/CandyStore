@@ -3,10 +3,10 @@ import { container } from "tsyringe"
 import { DeleteUserUseCase } from "./DeleteUserUseCase";
 
 class DeleteUserController{
-
+    
     async handle(request:Request,response:Response):Promise<Response>{
 
-        const id = request.body;
+        const id = request.body
 
         const deleteUserUseCase = container.resolve(DeleteUserUseCase)
 
@@ -15,4 +15,5 @@ class DeleteUserController{
         return response.status(200).send("Deleted User!")
     }
 }
+
 export {DeleteUserController}

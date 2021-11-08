@@ -5,8 +5,8 @@ import { FindUserByIDUserCase } from "./FindUserByIDUserCase";
 class FindUserByIdController{
 
     async handle(request:Request,response:Response):Promise<Response>{
-
-        const {id} = request.params;
+        
+        const {id} = request.params
 
         const findUserByIDUseCase = container.resolve(FindUserByIDUserCase)
 
@@ -15,4 +15,5 @@ class FindUserByIdController{
         return response.status(200).json(user)
     }
 }
+
 export  {FindUserByIdController}

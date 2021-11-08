@@ -11,12 +11,12 @@ class CreateShelfUseCase{
         private shelvesRepository:IShelvesRepository
     ){}
 
-        async execute({name}:ICreateShelfDTO):Promise<Shelf>{
+    async execute({name}:ICreateShelfDTO):Promise<Shelf>{
 
-            const shelf = await this.shelvesRepository.create({name})
+        const shelf = await this.shelvesRepository.create({name})
 
-            return shelf
-        }
+        return shelf
+    }
 
 }
 

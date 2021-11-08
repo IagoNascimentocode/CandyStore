@@ -1,4 +1,5 @@
 interface IFindProductByIDDTO {
-    id :string;
+    id:string;
 }
+
 export {IFindProductByIDDTO}

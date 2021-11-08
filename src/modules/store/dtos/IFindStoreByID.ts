@@ -1,4 +1,4 @@
 interface IFindStoreByID{
-    store_id :string;
+    store_id: string;
 }
 export {IFindStoreByID}

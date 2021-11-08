@@ -1,5 +1,6 @@
 interface IPutShelfOnProductDTO{
-    product_id:string
+    product_id:string;
     shelf_id:string;
 }
+
 export {IPutShelfOnProductDTO}

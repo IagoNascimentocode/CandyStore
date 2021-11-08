@@ -10,13 +10,14 @@ class CreateStoreUseCase{
         @inject("StoreRepository")
         private storeRepository:IStoreRepository
     ){}
+    
+    async execute({name,category}:ICreateStoreDTO):Promise<Store>{
 
-        async execute({name,category}:ICreateStoreDTO):Promise<Store>{
+        const store = await this.storeRepository.create({name,category})
 
-            const store = await this.storeRepository.create({name,category})
+        return store
+    }
 
-            return store
-        }
 }
 
 export {CreateStoreUseCase}

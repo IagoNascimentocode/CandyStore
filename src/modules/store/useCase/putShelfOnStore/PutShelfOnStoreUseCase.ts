@@ -9,7 +9,6 @@ class PutShelfOnStoreUseCase{
     constructor(
         @inject("StoreRepository")
         private storeRepository:IStoreRepository,
-
         @inject("ShelvesRepository")
         private shelvesRepository:IShelvesRepository
     ){}
@@ -20,8 +19,8 @@ class PutShelfOnStoreUseCase{
         await this.shelvesRepository.putStoreOnShelf({store_id,shelf_id})
 
         await this.storeRepository.putShelfOnStore({store_id,shelf_id})
-
     }
+
 }
 
 export {PutShelfOnStoreUseCase}

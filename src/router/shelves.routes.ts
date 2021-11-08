@@ -11,7 +11,6 @@ const listShelfAndProductsController = new ListShelfAndProductsController();
 const putProductOnShelfController = new PutProductOnShelfController();
 const listAllShelvesController = new ListAllShelvesController();
 
-
 shelvesRoutes.post('/',createShelfController.handle)
 shelvesRoutes.get('/listAll', listAllShelvesController.handle)
 shelvesRoutes.get('/listShelf',listShelfAndProductsController.handle)

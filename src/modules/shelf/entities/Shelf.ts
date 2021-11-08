@@ -24,7 +24,7 @@ class Shelf {
     store:Store;
 
     @Column()
-    store_id:string
+    store_id:string;
 
     @CreateDateColumn()
     created_at: Date;
@@ -37,6 +37,7 @@ class Shelf {
             this.id = uuid();
         }
     }
+
 }
 
 export {Shelf}

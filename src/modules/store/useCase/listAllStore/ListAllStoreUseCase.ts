@@ -13,8 +13,10 @@ class ListAllStoreUseCase{
     async execute():Promise<Store[]>{
 
         const stores = await this.storeRepository.listAllStore()
-
+        
         return stores
     }
+
 }
+
 export {ListAllStoreUseCase}

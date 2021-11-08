@@ -2,6 +2,7 @@ import { DeleteUserDTO } from "../dtos/DeleteUserDTO";
 import { ICreateUserDTO } from "../dtos/ICreateUserDTO";
 import { IFindIdDTO } from "../dtos/IFindIdDTO";
 import { IFindUserByEmailDTO } from "../dtos/IFindUserByEmailDTO";
+import { IInsertShoppingCartInUserDTO } from "../dtos/IInsertShoppingCartInUserDTO";
 import { User } from "../entities/User";
 
 interface IUsersRepository{
@@ -10,5 +11,6 @@ interface IUsersRepository{
     findUserByEmail({email_}:IFindUserByEmailDTO):Promise<User>;
     findUserByID({id}:IFindIdDTO):Promise<User>;
     deleteUser({id}:DeleteUserDTO):Promise<void>;
+    insertShoppingCartInUser({user_id,shoppingCart_id}:IInsertShoppingCartInUserDTO):Promise<void>;
 }
 export {IUsersRepository}

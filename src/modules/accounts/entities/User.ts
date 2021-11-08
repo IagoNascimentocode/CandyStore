@@ -1,5 +1,6 @@
-import { Column, CreateDateColumn, Entity, PrimaryColumn, UpdateDateColumn } from "typeorm";
+import { Column, CreateDateColumn, Entity, JoinColumn, OneToOne, PrimaryColumn, UpdateDateColumn } from "typeorm";
 import {v4 as uuid } from "uuid";
+import { ShoppingCart } from "../../shoppingCart/entities/ShoppingCart";
 
 @Entity("users")
 class User {
@@ -24,7 +25,14 @@ class User {
    
     @Column()
     address: string;
-   
+    
+    @OneToOne(()=>ShoppingCart,shoppingCart => shoppingCart)
+    @JoinColumn({name:"shoppingCart_id"})
+    shoppingCart:ShoppingCart;
+
+    @Column()
+    shoppingCart_id:string;
+
     @CreateDateColumn()
     birthDate: Date;
    

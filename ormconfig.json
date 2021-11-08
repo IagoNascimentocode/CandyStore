@@ -9,7 +9,8 @@
       "src/modules/accounts/entities/*.ts",
       "src/modules/store/entities/*.ts",
       "src/modules/shelf/entities/*.ts",
-      "src/modules/product/entities/*.ts"
+      "src/modules/product/entities/*.ts",
+      "src/modules/shoppingCart/entities/*.ts"
    ],
    "migrations": [
       "src/database/migrations/**/*.ts"

@@ -12,6 +12,8 @@ import { ShelvesRepository } from "../shelf/repositories/ShelvesRepository";
 import { IStoreRepository } from "../store/repositories/IStoreRepository";
 import { StoreRepository } from "../store/repositories/StoreRepository";
 
+import { IShoppingCartRepository } from "../shoppingCart/repositories/IShoppingCartRepository";
+import { ShoppingCartRepository } from "../shoppingCart/repositories/ShoppingCartReposiory";
 
 container.registerSingleton<IUsersRepository>(
     "UsersRepository",
@@ -31,4 +33,9 @@ container.registerSingleton<IShelvesRepository>(
 container.registerSingleton<IStoreRepository>(
     "StoreRepository",
     StoreRepository
+)
+
+container.registerSingleton<IShoppingCartRepository>(
+    "ShoppingCartRepository",
+    ShoppingCartRepository
 )

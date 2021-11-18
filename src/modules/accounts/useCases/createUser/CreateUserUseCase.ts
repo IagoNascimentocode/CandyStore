@@ -30,10 +30,9 @@ class CreateUserUseCase {
         
         
         const shoppingCart = await this.shoppingCartRepository.create({user_id:user.id})
-        
+
         await this.usersRepository.insertShoppingCartInUser({user_id:user.id,shoppingCart_id:shoppingCart.id})
 
-        return response.status(201)
     }
 
 }

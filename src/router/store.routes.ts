@@ -3,7 +3,7 @@ import { CreateStoreController } from "../modules/store/useCase/createStore/Crea
 import { ListAllStoreController } from "../modules/store/useCase/listAllStore/ListAllStorecontroller";
 import { ListStoreAndShelvesController } from "../modules/store/useCase/ListStoreAndShleves/ListStoreAndShelvesController";
 import { PutshelfOnStoreController } from "../modules/store/useCase/putShelfOnStore/PutShelfOnStoreController";
-import { shelvesRoutes } from "./shelves.routes";
+import { ensureAuthenticated } from "../middlewares/ensureAuthenticated";
 
 const storeRouter = Router();
 
@@ -12,9 +12,9 @@ const listStoreAndShelvesController = new ListStoreAndShelvesController();
 const putShelfOnStoreController = new PutshelfOnStoreController();
 const listAllStoreController = new ListAllStoreController();
 
-storeRouter.post('/createStore',createStoreController.handle)
+storeRouter.post('/createStore', ensureAuthenticated ,createStoreController.handle)
 storeRouter.get('/listAll',listAllStoreController.handle)
 storeRouter.get('/listStore',listStoreAndShelvesController.handle)
-storeRouter.post('/insertShelf',putShelfOnStoreController.handle)
+storeRouter.post('/insertShelf', ensureAuthenticated ,putShelfOnStoreController.handle)
 
 export {storeRouter}
